@@ -12,33 +12,96 @@
      // The width is 120 yards, the height is 80 yards.
      const width = 120 * 5;
      const height = 80 * 5;
-     d3.json("../rawdata/data/events/7298.json").then(function(data) {
-         data = data.filter(d => d.type.name == "Pass");
+     const padding = {top: 30, left: 30, right: 30, bottom: 30};
 
-         let svg = d3.select("#field")
-             .append("svg")
-             .attr("width", width)
-             .attr("height", height);
+     // Draw the pitch
+     let div = d3.select("#field");
+     let svg = div.append("svg")
+                  .attr("width", width + padding.left + padding.right)
+                  .attr("height", height + padding.top + padding.bottom);
+     svg.append("rect")
+        .attr("width", "100%")
+        .attr("height", "100%")
+        .style("fill", "grey");
 
-         svg.append("rect")
-             .attr("x", 0)
-             .attr("y", 0)
-             .attr("width", width)
-             .attr("height", height)
-             .style("fill", "green");
+     svg.append("rect")
+        .attr("x", padding.left)
+        .attr("y", padding.top)
+        .attr("width", width)
+        .attr("height", height)
+        .style("fill", "green");
 
-         let scaleX = d3.scaleLinear().domain([0, 120]).range([0, width]);
-         let scaleY = d3.scaleLinear().domain([0, 80]).range([height, 0]);
+     // Create a select box
+     d3.json("../rawdata/data/matches/43.json")
+       .then(function(matches) {
 
-         svg.selectAll("circle.pos")
-            .data(data)
-            .enter()
-            .append("circle")
-            .attr("class", "pos")
-            .attr("r", 2)
-            .attr("cx", d => scaleX(d.location[0]))
-            .attr("cy", d => scaleY(d.location[1]));
-     });
+           let match_selector = div
+               .append("select")
+               .attr("class", "match_selector")
+               .on("change", draw_passlocs);
+
+           let options = match_selector
+               .selectAll("option")
+               .data(matches)
+               .enter()
+               .append("option")
+               .text(d => d.home_team.home_team_name + " vs " + d.away_team.away_team_name)
+               .attr("value", d => d.match_id);
+
+           draw_passlocs();
+       });
+
+     function draw_passlocs() {
+         //let match_id = svg.select("select.match_selector").property("value");
+         let match_id = document.getElementsByClassName('match_selector')[0].value;
+         let url = "../rawdata/data/events/" + match_id + ".json";
+
+         d3.json(url).then(function(data) {
+             data = data.filter(d => d.type.name == "Pass");
+             console.log(data);
+
+             // Data driven layer
+             let ddlayer = svg
+                 .selectAll("g.ddlayer")
+                 .data(["pass_locs"]);
+             ddlayer
+                 .enter()
+                 .append("g")
+                 .attr("class", "ddlayer")
+                 .attr("transform", `translate(${padding.left},${padding.top})`);
+             ddlayer
+                 .exit()
+                 .remove();
+             ddlayer = svg.selectAll("g.ddlayer");
+
+
+             let scalePitchX = d3
+                 .scaleLinear()
+                 .domain([0, 120])
+                 .range([0, width]);
+             let scalePitchY = d3
+                 .scaleLinear()
+                 .domain([0, 80])
+                 .range([height, 0]);
+
+             let pass_locs = ddlayer
+                 .selectAll("circle.pass_locs")
+                 .data(data, d => d.id);
+
+             pass_locs
+                 .enter()
+                 .append("circle")
+                 .attr("class", "pass_locs")
+                 .attr("r", 2)
+                 .attr("cx", d => scalePitchX(d.location[0]))
+                 .attr("cy", d => scalePitchY(d.location[1]));
+             pass_locs
+                 .exit()
+                 .remove();
+         });
+     }
+
+
     </script>
 </body>
 
