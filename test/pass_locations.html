@@ -54,6 +54,8 @@
      function draw_passlocs() {
          //let match_id = svg.select("select.match_selector").property("value");
          let match_id = document.getElementsByClassName('match_selector')[0].value;
+         let match_data = d3.select(document.getElementsByClassName('match_selector')[0].selectedOptions[0]).data();
+         console.log(match_data);
          let url = "../rawdata/data/events/" + match_id + ".json";
 
          d3.json(url).then(function(data) {
@@ -93,12 +95,23 @@
                  .append("circle")
                  .attr("class", "pass_locs")
                  .attr("r", 2)
-                 .attr("cx", d => scalePitchX(d.location[0]))
+                 .attr("cx", d => scalePitchX(translocX(d)))
                  .attr("cy", d => scalePitchY(d.location[1]));
              pass_locs
                  .exit()
                  .remove();
          });
+     }
+
+     function translocX(d) {
+         let x;
+         if (d.period == 1)
+             x = d.location[0];
+         else if (d.period == 2)
+             x = 120 - d.location[0];
+         else
+             console.log("Invalid period", d.period, d.timestamp);
+         return x;
      }
 
 
