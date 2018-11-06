@@ -95,26 +95,13 @@
                  .append("circle")
                  .attr("class", "pass_locs")
                  .attr("r", 2)
-                 .attr("cx", d => scalePitchX(translocX(d)))
+                 .attr("cx", d => scalePitchX(d.location[0]))
                  .attr("cy", d => scalePitchY(d.location[1]));
              pass_locs
                  .exit()
                  .remove();
          });
      }
-
-     function translocX(d) {
-         let x;
-         if (d.period == 1)
-             x = d.location[0];
-         else if (d.period == 2)
-             x = 120 - d.location[0];
-         else
-             console.log("Invalid period", d.period, d.timestamp);
-         return x;
-     }
-
-
     </script>
 </body>
 
