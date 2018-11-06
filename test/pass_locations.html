@@ -53,9 +53,10 @@
 
      function draw_passlocs() {
          //let match_id = svg.select("select.match_selector").property("value");
-         let match_id = document.getElementsByClassName('match_selector')[0].value;
-         let match_data = d3.select(document.getElementsByClassName('match_selector')[0].selectedOptions[0]).data();
-         console.log(match_data);
+         let match_id = d3.select("select.match_selector").node().value;
+         let match_data = d3.select(d3.select("select.match_selector").node().selectedOptions[0])
+                            .datum();
+
          let url = "../rawdata/data/events/" + match_id + ".json";
 
          d3.json(url).then(function(data) {
