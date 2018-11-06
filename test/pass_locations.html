@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <h3>All pass locations</h3>
+    <h3>All pass locations (in first period)</h3>
     <div id="field"></div>
     <script>
      // The width is 120 yards, the height is 80 yards.
@@ -54,14 +54,37 @@
      function draw_passlocs() {
          //let match_id = svg.select("select.match_selector").property("value");
          let match_id = d3.select("select.match_selector").node().value;
-         let match_data = d3.select(d3.select("select.match_selector").node().selectedOptions[0])
-                            .datum();
+         //let match_data = d3.select(d3.select("select.match_selector").node().selectedOptions[0])
+         //                   .datum();
 
-         let url = "../rawdata/data/events/" + match_id + ".json";
+         let event_url = "../rawdata/data/events/" + match_id + ".json";
+         let lineup_url = "../rawdata/data/lineups/" + match_id + ".json";
 
-         d3.json(url).then(function(data) {
+         Promise.all([
+             d3.json(event_url),
+             d3.json(lineup_url)
+         ])
+         .then(function(datas) {
+             var data = datas[0];
+             var lineup = datas[1];
+
+             function which_team(d) {
+                 var player_id = d.player.id;
+                 if (!player_id) {
+                     console.error("Player id not found");
+                 }
+
+                 for (let team of lineup) {
+                     if (team.lineup.map(d => d.player_id).includes(player_id)) {
+                         return team.team_name;
+                     }
+                 }
+                 console.error("Should not happen");
+             };
+
              data = data.filter(d => d.type.name == "Pass");
-             console.log(data);
+             // Currently only show first period
+             data = data.filter(d => d.period == 1);
 
              // Data driven layer
              let ddlayer = svg
@@ -77,6 +100,8 @@
                  .remove();
              ddlayer = svg.selectAll("g.ddlayer");
 
+             let scaleColor = d3.scaleOrdinal(d3.schemeCategory10)
+                                .domain(lineup.map(d => d.team_name));
 
              let scalePitchX = d3
                  .scaleLinear()
@@ -97,11 +122,13 @@
                  .attr("class", "pass_locs")
                  .attr("r", 2)
                  .attr("cx", d => scalePitchX(d.location[0]))
-                 .attr("cy", d => scalePitchY(d.location[1]));
+                 .attr("cy", d => scalePitchY(d.location[1]))
+                 .attr("fill", d => scaleColor(which_team(d)));
              pass_locs
                  .exit()
                  .remove();
-         });
+
+         })
      }
     </script>
 </body>
