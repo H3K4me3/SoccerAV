@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Soccer Space</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/multirange.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+
+				<!-- Header -->
+					<header id="header">
+						
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+					<div class = "column">
+						<!-- slider -->
+
+							<div id = "slider">
+								<input type="range" multiple value="10,80" />
+							</div>
+
+							<!-- soccer field -->
+							<div id = "soccerfield">
+								<svg id = "innerField">
+									<rect width="540" height="810" style="stroke:white;stroke-width:5;fill-opacity:0" />
+									<line x1="0" y1="405" x2="540" y2="405" style="stroke:white;stroke-width:2" />
+									 <circle cx="270" cy="405" r="67" style="stroke:white;stroke-width:2;fill-opacity:0" />
+									 <path id="corner1" style="stroke:white;stroke-width:2;fill-opacity:0"/>
+									 <path id="corner2" style="stroke:white;stroke-width:2;fill-opacity:0"/>
+									 <path id="corner3" style="stroke:white;stroke-width:2;fill-opacity:0"/>
+									 <path id="corner4" style="stroke:white;stroke-width:2;fill-opacity:0"/>
+									 <path id="secFront1" style="stroke:white;stroke-width:2;fill-opacity:0"/>
+									 <path id="secFront2" style="stroke:white;stroke-width:2;fill-opacity:0"/>
+									 <rect x="135" y="0" width="270" height="110" style="stroke:white;stroke-width:2;fill-opacity:0" />
+									 <rect x="135" y="700" width="270" height="110" style="stroke:white;stroke-width:2;fill-opacity:0" />
+									 <rect x="209" y="0" width="122" height="36" style="stroke:white;stroke-width:2;fill-opacity:0" />
+									 <rect x="209" y="774" width="122" height="36" style="stroke:white;stroke-width:2;fill-opacity:0" />
+								
+								</svg>
+							</div>
+						</div>
+						
+						<div class="column">
+							<!-- team A -->
+							<div id = "team_a">
+								<h3>Argentina</h3>
+								 <svg viewBox="10 20 170 170">
+							        <path d="
+							                 M 100, 100
+							                 m -75, 0
+							                 a 75,75 0 1,0 150,0
+							                 a 75,75 0 1,0 -150,0
+							                 "
+							              />
+							    </svg>							
+							</div>
+
+						<!-- team B -->
+							<div id = "team_b">
+							
+								 <svg viewBox="10 20 170 170">
+							        <path id="circle_a"d="
+							                 M 100, 100
+							                 m -75, 0
+							                 a 75,75 0 1,0 150,0
+							                 a 75,75 0 1,0 -150,0
+							                 "
+							              />
+							        <text width="800">
+									    <textPath xlink:href="#circle_a"">
+									      1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+									    </textPath>
+									  </text>
+								</svg>
+							    <h3>France</h3>			
+							</div>
+							<!-- Legends -->
+							<div id = "lengends">
+							</div>
+						</div>
+					</div>
+			</div>
+		<!-- Scripts -->
+			<!--<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		--><script type="text/javascript">
+				function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+				  var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+
+				  return {
+				    x: centerX + (radius * Math.cos(angleInRadians)),
+				    y: centerY + (radius * Math.sin(angleInRadians))
+				  };
+				}
+
+				function describeArc(x, y, radius, startAngle, endAngle){
+
+				    var start = polarToCartesian(x, y, radius, endAngle);
+				    var end = polarToCartesian(x, y, radius, startAngle);
+
+				    var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
+
+				    if (x==270){
+					    var d = [
+					        "M", start.x, start.y, 
+					        "A", radius, radius, 0, arcSweep, 0, end.x, end.y,
+					        "L", start.x, start.y
+					    ].join(" ");
+					}else{
+						var d = [
+					        "M", start.x, start.y, 
+					        "A", radius, radius, 0, arcSweep, 0, end.x, end.y,
+					        "L", x,y,
+					        "L", start.x, start.y
+					    ].join(" ");
+
+					}
+				    return d;       
+				}
+
+				var arc1 = describeArc(0, 0, 20, 90, 180);
+				var arc2 = describeArc(0, 810, 20, 0, 90);
+				var arc3 = describeArc(540, 0, 20, 180, 270);
+				var arc4 = describeArc(540, 810, 20, 270, 360);
+				var arc5 = describeArc(270, 68, 60, 135, 225);
+				var arc6 = describeArc(270, 742, 60, -45, 45);
+				document.getElementById("corner1").setAttribute("d", arc1);
+				document.getElementById("corner2").setAttribute("d", arc2);
+				document.getElementById("corner3").setAttribute("d", arc3);
+				document.getElementById("corner4").setAttribute("d", arc4);
+				document.getElementById("secFront1").setAttribute("d", arc5);
+				document.getElementById("secFront2").setAttribute("d", arc6);
+		</script>
+			<script src="assets/js/multirange.js"></script>
+
+	</body>
+</html>

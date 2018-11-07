@@ -1,0 +1,86 @@
+*{
+	font-family: Atrament
+}
+.column{
+	float: left;
+}
+#header, #main{
+	position: relative;
+	left: 50px;
+}
+
+#header{
+	height: 100px;
+}
+#wrapper {
+	height: 1260px;
+	background: #072e36;
+}
+
+#soccerfield{
+	margin-top: 50px;
+	width: 600px;
+	height: 900px;
+	background: #1f6e66;
+}
+#soccerfield svg{
+	position: relative;
+	top: 4.5%;
+	left: 4.5%;
+	width: 90%;
+	height: 90%;
+	background: linear-gradient(
+	  to bottom,
+	  #1f6e66,
+	  #1f6e66 50%,
+	  #137d5a 50%,
+	  #137d5a
+	);
+	background-size: 100% 90px;
+}
+
+#team_a{
+	position: relative;
+	left: 3%;
+	width: 450px;
+	height: 450px;
+	text-align: center;
+	font-size: 30px;
+	color: #85d8e9;
+}
+
+#team_a h3{
+	position: relative;
+	margin-top: 0;
+}
+#team_a path{
+	stroke: #85d8e9;
+	stroke-width: 1px;
+	fill-opacity: 0;
+}
+
+#team_b{
+	position: relative;
+	left: 3%;
+	margin-top: 15%;
+	width: 450px;
+	height: 450px;
+	text-align: center;
+	font-size: 30px;
+	color: #e2e2b7;
+}
+
+#team_b h3{
+	position: relative;
+	margin-top: 0;
+}
+#team_b path{
+	stroke: #e2e2b7;
+	stroke-width: 1px;
+	fill-opacity: 0;
+}
+
+svg text{
+	font-size: 15px
+}
+
