@@ -7,15 +7,25 @@
 </head>
 
 <body>
-    <h2>Simple pass locations</h2>
+    <h2>Simple pass locations (first period)</h2>
     <div id="pitch1"></div>
     <script>
-     let mypitch = new Pitch()
-     mypitch
+     let pitch1 = new Pitch();
+     pitch1
          .selection("#pitch1")
          .match_id(7586)
-         .init()
-         .draw_passlocs();
+         //.init()
+         .draw();
+    </script>
+
+    <h2>With select box</h2>
+    <div id="pitch2"></div>
+    <select id="pitch2-match-selector"></select>
+    <script>
+     let pitch2 = new Pitch();
+     pitch2
+         .selection("#pitch2")
+         .bind_match_selector("#pitch2-match-selector");
     </script>
 
 
