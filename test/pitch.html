@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <h2>Simple pass locations (first period)</h2>
+    <h2>Simple pass locations (only first period)</h2>
     <div id="pitch1"></div>
     <script>
      let pitch1 = new Pitch();
@@ -18,7 +18,7 @@
          .draw();
     </script>
 
-    <h2>With select box</h2>
+    <h2>Simple pass locations (only first period) with select box</h2>
     <div id="pitch2"></div>
     <select id="pitch2-match-selector"></select>
     <script>
@@ -28,6 +28,16 @@
          .bind_match_selector("#pitch2-match-selector");
     </script>
 
+    <h2>Pass paths</h2>
+    <div id="pitch3"></div>
+    <select id="pitch3-match-selector"></select>
+    <script>
+     let pitch3 = new Pitch();
+     pitch3
+         .drawtype("passpaths")
+         .selection("#pitch3")
+         .bind_match_selector("#pitch3-match-selector");
+    </script>
 
 </body>
 
