@@ -39,6 +39,25 @@
          .bind_match_selector("#pitch3-match-selector");
     </script>
 
+    <h2>Types of plot with a select box</h2>
+    <div id="pitch4"></div>
+    <select id="pitch4-match-selector"></select>
+    <select id="pitch4-type-selector" onchange="pitch4_onchange()">
+        <option value="passlocs">Pass locations</option>
+        <option value="passpaths">Pass paths</option>
+    </select>
+    <script>
+     let pitch4 = new Pitch();
+     pitch4
+         .drawtype(document.getElementById("pitch4-type-selector").value)
+         .selection("#pitch4")
+         .bind_match_selector("#pitch4-match-selector");
+     function pitch4_onchange() {
+         let type = document.getElementById("pitch4-type-selector").value;
+         pitch4.drawtype(type).draw();
+     }
+    </script>
+
 </body>
 
 </html>
