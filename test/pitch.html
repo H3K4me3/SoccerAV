@@ -62,6 +62,22 @@
      }
     </script>
 
+
+    <h2>Time Slider</h2>
+    <div id="pitch5-slider" style="width: 900px;"></div>
+    <script>
+     noUiSlider.create(document.getElementById("pitch5-slider"), {
+         start: [0, 5700],
+         connect: true,
+         behaviour: 'drag-tap-hover',
+         range: {'min': 0, 'max': 5700},
+         tooltips: [{to: d => String(Math.floor(d/60)) + ":" + String(Math.round(d % 60))},
+                    {to: d => String(Math.floor(d/60)) + ":" + String(Math.round(d % 60))}]
+     });
+    </script>
+
+    <div style="height: 400px;"></div>
+
 </body>
 
 </html>
