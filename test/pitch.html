@@ -29,7 +29,8 @@
      let pitch2 = new Pitch();
      pitch2
          .selection("#pitch2")
-         .bind_match_selector("#pitch2-match-selector");
+         .match_selector("#pitch2-match-selector")
+         .draw();
     </script>
 
     <h2>Pass paths</h2>
@@ -40,7 +41,8 @@
      pitch3
          .drawtype("passpaths")
          .selection("#pitch3")
-         .bind_match_selector("#pitch3-match-selector");
+         .match_selector("#pitch3-match-selector")
+         .draw();
     </script>
 
     <h2>Types of plot with a select box</h2>
@@ -55,7 +57,8 @@
      pitch4
          .drawtype(document.getElementById("pitch4-type-selector").value)
          .selection("#pitch4")
-         .bind_match_selector("#pitch4-match-selector");
+         .match_selector("#pitch4-match-selector")
+         .draw();
      function pitch4_onchange() {
          let type = document.getElementById("pitch4-type-selector").value;
          pitch4.drawtype(type).draw();
@@ -64,7 +67,7 @@
 
 
     <h2>Time Slider</h2>
-    <div id="pitch5-slider" style="width: 900px;"></div>
+    <div id="pitch5-slider" style="width: 600px;"></div>
     <script>
      noUiSlider.create(document.getElementById("pitch5-slider"), {
          start: [0, 5700],
@@ -74,6 +77,19 @@
          tooltips: [{to: d => String(Math.floor(d/60)) + ":" + String(Math.round(d % 60))},
                     {to: d => String(Math.floor(d/60)) + ":" + String(Math.round(d % 60))}]
      });
+    </script>
+
+
+    <h2>Pitch with time slider binding</h2>
+    <div id="pitch6"></div>
+    <div id="pitch6-slider" style="width: 600px;"></div>
+    <script>
+     let pitch6 = new Pitch();
+     pitch6
+         .drawtype("passpaths")
+         .selection("#pitch6")
+         .match_id(7586)
+         .bind_time_slider("#pitch6-slider");
     </script>
 
     <div style="height: 400px;"></div>
