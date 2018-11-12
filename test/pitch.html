@@ -22,18 +22,20 @@
          .draw();
     </script>
 
-    <h2>Simple pass locations on vertical pitch with select box</h2>
-    <div id="pitch2"></div>
-    <select id="pitch2-match-selector"></select>
-    <script>
-     let pitch2 = new Pitch();
-     pitch2
+    <!--
+         <h2>Simple pass locations on vertical pitch with select box</h2>
+         <div id="pitch2"></div>
+         <select id="pitch2-match-selector"></select>
+         <script>
+         let pitch2 = new Pitch();
+         pitch2
          .selection("#pitch2")
          .match_selector("#pitch2-match-selector")
          .draw();
-    </script>
+         </script>
+    -->
 
-    <h2>Pass paths</h2>
+    <h2>Pass paths with match selector</h2>
     <div id="pitch3"></div>
     <select id="pitch3-match-selector"></select>
     <script>
@@ -66,19 +68,20 @@
     </script>
 
 
-    <h2>Time Slider</h2>
-    <div id="pitch5-slider" style="width: 600px;"></div>
-    <script>
-     noUiSlider.create(document.getElementById("pitch5-slider"), {
+    <!--
+         <h2>Time Slider</h2>
+         <div id="pitch5-slider" style="width: 600px;"></div>
+         <script>
+         noUiSlider.create(document.getElementById("pitch5-slider"), {
          start: [0, 5700],
          connect: true,
          behaviour: 'drag-tap-hover',
          range: {'min': 0, 'max': 5700},
          tooltips: [{to: d => String(Math.floor(d/60)) + ":" + String(Math.round(d % 60))},
-                    {to: d => String(Math.floor(d/60)) + ":" + String(Math.round(d % 60))}]
-     });
-    </script>
-
+         {to: d => String(Math.floor(d/60)) + ":" + String(Math.round(d % 60))}]
+         });
+         </script>
+    -->
 
     <h2>Pitch with time slider binding</h2>
     <div id="pitch6"></div>
