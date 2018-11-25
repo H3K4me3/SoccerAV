@@ -1,4 +1,5 @@
-*{
+/*
+ *{
 	font-family: Atrament
 }
 .column{
@@ -8,7 +9,6 @@
 	position: relative;
 	left: 50px;
 }
-
 #header{
 	top: 220px;
 	left: 400px;
@@ -23,7 +23,6 @@
 	top: -50px;
 	background: #072e36;
 }
-
 #soccerField{
 	position: relative;
 	left: 100px;
@@ -33,14 +32,18 @@
 	height: 980px;
 	background: #1f6e66;
 }
+ */
 
 
-#innerField{
+
+.innerField{
+  /*
 	position: relative;
 	top: 3%;
 	left: 4.8%;
 	width: 90%;
 	height: 90%;
+   */
 	background: linear-gradient(
 	  to bottom,
 	  #1f6e66,
@@ -51,62 +54,20 @@
 	background-size: 100% 95px;
 }
 
-#innerField rect, circle, path{
-	fill-opacity: 0;
-	stroke: white;
-	stroke-width: 2px;
-}
-
-#innerField line{
-	stroke: white;
-	stroke-width: 2px;
+.innerField line{
+	  stroke: white;
+	  stroke-width: 2px;
 }
 
 .dots {
-	fill: white;
-	fill-opacity: 1;
-}
-#team_a{
-	position: relative;
-	left: 3%;
-	width: 450px;
-	height: 450px;
-	text-align: center;
-	font-size: 30px;
-	color: #85d8e9;
+	  fill: white;
+	  fill-opacity: 1;
 }
 
-#team_a h3{
-	position: relative;
-	margin-top: 0;
-}
-#team_a path{
-	stroke: #85d8e9;
-	stroke-width: 1px;
-	fill-opacity: 0;
+.innerSketch {
+	  fill-opacity: 0;
+	  stroke: white;
+	  stroke-width: 2px;
 }
 
-#team_b{
-	position: relative;
-	left: 3%;
-	margin-top: 15%;
-	width: 450px;
-	height: 450px;
-	text-align: center;
-	font-size: 30px;
-	color: #e2e2b7;
-}
 
-#team_b h3{
-	position: relative;
-	margin-top: 0;
-}
-#team_b path{
-	stroke: #e2e2b7;
-	stroke-width: 1px;
-	fill-opacity: 0;
-}
-
-svg text{
-	font-size: 15px
-}

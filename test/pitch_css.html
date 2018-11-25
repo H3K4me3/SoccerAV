@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="../lib/noUiSlider/nouislider.js"></script>
+    <link  href="../lib/noUiSlider/nouislider.css" rel="stylesheet">
+
+    <script src="../lib/pitch.js"></script>
+
+		<link rel="stylesheet" href="../soccerfield-template-vertical/soccerfield.css" />
+
+</head>
+
+<body>
+    <h2>Simple</h2>
+    <div id="pitch1"></div>
+    <script>
+     let pitch1 = new Pitch();
+     pitch1
+         .selection("#pitch1")
+         .match_id(7586)
+         .draw();
+    </script>
+
+</body>
+
+</html>
