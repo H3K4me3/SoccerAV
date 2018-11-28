@@ -9,14 +9,23 @@
 		<title>Soccer Space</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="soccerfield.css" />
-		<script src="https://d3js.org/d3.v4.min.js"></script>
-		
-	</head>
-	
-
-	<body>
-		<div id="main">
-		</div>
-		<script src="soccerfield.js"></script>
+		<link rel="stylesheet" href="soccerfield.css"/>
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../lib/noUiSlider/nouislider.js"></script>
+    <link  href="../lib/noUiSlider/nouislider.css" rel="stylesheet">
+    <script src="../lib/pitch.js"></script>
+  </head>
+  <body>
+    <div id="pitch"></div>
+    <select id="pitch-match-selector"></select>
+    <div id="pitch-slider" style="width: 600px;"></div>
+    <script>
+     let pitch = new Pitch();
+     pitch
+         .drawtype("players")
+         .selection("#pitch")
+         .match_selector("#pitch-match-selector")
+         .time_slider("#pitch-slider")
+         .draw();
+    </script>
 	</body>
