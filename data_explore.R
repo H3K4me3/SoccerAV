@@ -22,3 +22,28 @@ match <- match %>% filter(shot.outcome.name == "Goal")
 match <- mutate(match, location.x = sapply(location, function(x) x[1]))
 match <- mutate(match, location.y = sapply(location, function(x) x[2]))
 match
+
+
+
+
+
+
+
+match <- li.matches[[42]]
+table(match$pass.type.name, useNA = "ifany")
+match <- match %>% filter(type.name == "Pass")
+table(match$pass.type.name, useNA = "ifany")
+
+match <- mutate(match, location.x = sapply(location, function(x) x[1]))
+match <- mutate(match, location.y = sapply(location, function(x) x[2]))
+match <- mutate(match, end_x = sapply(pass.end_location, function(x) x[1]))
+match <- mutate(match, end_y = sapply(pass.end_location, function(x) x[2]))
+
+a <- match %>% filter(is.na(pass.recipient.name)) %>%
+    select(pass.length, location.x, location.y, end_x, end_y,
+           pass.recipient.id, pass.type.name, pass.outcome.name)
+
+print(a, n = 100)
+
+
+
