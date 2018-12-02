@@ -30,9 +30,14 @@ match
 
 
 match <- li.matches[[42]]
-table(match$pass.type.name, useNA = "ifany")
 match <- match %>% filter(type.name == "Pass")
+table(is.na(match$pass.recipient.id))
 table(match$pass.type.name, useNA = "ifany")
+## Overall stat of pass outcomes
+table(match$pass.outcome.name, useNA = "ifany")
+## Stat of pass outcomes with a recipient
+table(filter(match, !is.na(match$pass.recipient.name))$pass.outcome.name,
+      useNA = "ifany")
 
 match <- mutate(match, location.x = sapply(location, function(x) x[1]))
 match <- mutate(match, location.y = sapply(location, function(x) x[2]))
