@@ -5,3 +5,13 @@ text.player_name {
     text-anchor: middle;
     font-size: 12px;
 }
+
+circle.player_loc.hovered {
+    /* TODO */
+    opacity: 0.9;
+}
+
+circle.player_loc.unhovered {
+    /* TODO */
+    opacity: 0.3;
+}
