@@ -1,0 +1,7 @@
+
+text.player_name {
+    pointer-events: none;
+    dominant-baseline: middle;
+    text-anchor: middle;
+    font-size: 12px;
+}
