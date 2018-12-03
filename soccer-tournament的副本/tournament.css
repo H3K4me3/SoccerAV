@@ -1,0 +1,42 @@
+ 
+html {
+min-width: 1040px;
+}
+ 
+body {
+	background: #163329;
+	color: white;
+	font-family: Atrament;
+	margin: 1em auto 4em auto;
+	position: relative;
+	width: 960px;
+}
+ 
+h1 {
+	font-size: 74px;
+	font-weight: 300;
+	letter-spacing: -2px;
+	margin: .3em 0 .1em 0;
+	text-rendering: optimizeLegibility;
+}
+ 
+
+body > p {
+	width: 720px;
+}
+
+ 
+svg {
+	font: 15px Atrament;
+}
+
+.titles text{
+	fill: white;
+}
+.axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+ 
+
