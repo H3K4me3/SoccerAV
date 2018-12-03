@@ -5,6 +5,9 @@ text.player_name {
     text-anchor: middle;
     font-size: 12px;
 }
+text.player_name.unhovered {
+    opacity: 0;
+}
 
 circle.player_loc.hovered {
     /* TODO */
@@ -14,4 +17,12 @@ circle.player_loc.hovered {
 circle.player_loc.unhovered {
     /* TODO */
     opacity: 0.3;
+}
+
+path.pass_path.hovered {
+    stroke-opacity: 0.9;
+    stroke-width: 3;
+}
+path.pass_path.unhovered {
+    stroke-opacity: 0.01;
 }
