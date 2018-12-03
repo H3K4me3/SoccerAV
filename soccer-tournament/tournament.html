@@ -26,16 +26,48 @@ display: none;
 </style>
  
 <header>
+
+    <script src="../lib/noUiSlider/nouislider.js"></script>
+    <link  href="../lib/noUiSlider/nouislider.css" rel="stylesheet">
+    <script src="../lib/pitch.js"></script>
+    <link rel="stylesheet" href="../lib/pitch.css" />
+	<link rel="stylesheet" href="../soccerfield-template-vertical/soccerfield.css" />
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script>
+        var d3v3 = d3;
+        window.d3 = null;
+    </script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+        var d3v5 = d3;
+    </script>
 </header>
 
 <body>
 	<h1>2018 FIFA World Cup Tournament</h1>
 	 <div id="main">
 	 </div>
- </body>
+
+    <h2>Pitch</h2>
+    <div id="pitch"></div>
+    <div id="pitch-slider" style="width: 600px;"></div>
+
+    <script>
+     let pitch = new Pitch();
+     pitch
+         .drawtype("players")
+         .selection("#pitch")
+         .match_id(7525)
+         //.match_selector("#pitch-match-selector")
+         .time_slider("#pitch-slider")
+         .draw();
+    </script>
+
+
+    <script src="tournament.js"></script>
+</body>
 
  
 <footer>
 </footer>
-<script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
-<script src="tournament.js"></script>

@@ -1,20 +1,20 @@
-var main = d3.select('#main');
+var main = d3v3.select('#main');
 var width = 880, height = 880,
 //outerRadius = Math.min(width, height) / 2 - 10,
 outerRadius = Math.min(width, height) / 2 - 150,
 //innerRadius = outerRadius - 24;
 innerRadius = outerRadius - 40;
  
-var arc = d3.svg.arc()
+var arc = d3v3.svg.arc()
 		.innerRadius(innerRadius)
 		.outerRadius(outerRadius);
  
-var layout = d3.layout.chord()
+var layout = d3v3.layout.chord()
 		.padding(.02)
-		.sortSubgroups(d3.descending)
-		.sortChords(d3.ascending);
+		.sortSubgroups(d3v3.descending)
+		.sortChords(d3v3.ascending);
  
-var path = d3.svg.chord()
+var path = d3v3.svg.chord()
 .radius(innerRadius);
 
  
@@ -28,8 +28,8 @@ var svg = main.append("svg")
 svg.append("circle")
 .attr("r", outerRadius);
  
-d3.csv("teams.csv", function(countries) {
-d3.json("matrix.json", function(matrix) {
+d3v3.csv("teams.csv", function(countries) {
+d3v3.json("matrix.json", function(matrix) {
  
 // Compute the chord layout.
 chord=layout.matrix(matrix);
@@ -108,8 +108,20 @@ var chord = svg.selectAll(".chord")
 .on("click", function(d){
 	var teamA = countries[d.source.index].name;
 	var teamB = countries[d.target.index].name;
-	return teamA, teamB;
+    tournament_click(teamA, teamB);
 });
+
+function tournament_click(teamA, teamB) {
+    let matches = d3v5.json("../rawdata/data/matches/43.json").then(function(matches) {
+        let match = matches.find(m =>
+            (m.away_team.away_team_name === teamB && m.home_team.home_team_name === teamA) ||
+            (m.away_team.away_team_name === teamA && m.home_team.home_team_name === teamB));
+        console.log([teamA], [teamB])
+        console.log("Loading match", match.match_id)
+        pitch.match_id(match.match_id).draw();
+    })
+    return matches;
+}
 
  
 // Add an elaborate mouseover title for each chord.
