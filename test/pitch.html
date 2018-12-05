@@ -86,25 +86,26 @@
          </script>
     -->
 
-    <h2>Pitch with time slider binding</h2>
-    <div id="pitch6"></div>
-    <select id="pitch6-match-selector"></select>
-    <div id="pitch6-slider" style="width: 600px;"></div>
-    <script>
-     let pitch6 = new Pitch();
-     pitch6
+    <!--
+         <h2>Pitch with time slider binding</h2>
+         <div id="pitch6"></div>
+         <select id="pitch6-match-selector"></select>
+         <div id="pitch6-slider" style="width: 600px;"></div>
+         <script>
+         let pitch6 = new Pitch();
+         pitch6
          .drawtype("passpaths")
          .selection("#pitch6")
          .match_selector("#pitch6-match-selector")
          .time_slider("#pitch6-slider")
          .draw();
-    </script>
+         </script>
+    -->
 
 
     <h2>Players average locations</h2>
     <div id="pitch7"></div>
     <select id="pitch7-match-selector"></select>
-    <div id="pitch7-slider" style="width: 600px;"></div>
     <div id="pitch7-timevis"></div>
     <script>
      let pitch7 = new Pitch();
@@ -112,7 +113,6 @@
          .drawtype("players")
          .selection("#pitch7")
          .match_selector("#pitch7-match-selector")
-         .time_slider("#pitch7-slider")
          .timevis("#pitch7-timevis")
          .draw();
     </script>
