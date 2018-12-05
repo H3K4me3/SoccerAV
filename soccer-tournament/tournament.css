@@ -75,3 +75,9 @@ path.chord {
 	stroke: white;
 	stroke-width: 3px;
 }
+#pitch_div{
+    width: 1600px;
+    background-color: #072e36;
+    position: relative;
+    left: 0;
+}
