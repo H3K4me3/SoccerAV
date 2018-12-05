@@ -1,42 +1,77 @@
- 
+*{
+	margin: 0;
+	padding: 0;
+}
 html {
 min-width: 1040px;
 }
  
 body {
-	background: #163329;
 	color: white;
 	font-family: Atrament;
-	margin: 1em auto 4em auto;
 	position: relative;
-	width: 960px;
+	width: 1600px;
 }
- 
-h1 {
+
+header{
+	background-color: #163329;
+	height: 150px;
+}
+header h1 {
 	font-size: 74px;
 	font-weight: 300;
 	letter-spacing: -2px;
-	margin: .3em 0 .1em 0;
 	text-rendering: optimizeLegibility;
+	position: relative;
+	top: 30px;
+	text-align: center;
 }
- 
 
 body > p {
 	width: 720px;
 }
 
+#main{
+	background-color: #163329;
+}
  
 svg {
 	font: 15px Atrament;
 }
 
+svg text{
+	fill: white;
+}
+#circle circle {
+    fill: none;
+    pointer-events: all;
+}
+     
+.group path {
+    fill-opacity: .8;
+}
+     
+path.chord {
+    stroke: #000;
+    stroke-width: .25px;
+}
+     
+#circle:hover path.fade {
+    display: none;
+ }
 .titles text{
 	fill: white;
 }
-.axis path, .axis line {
-	fill: none;
-	stroke: #000;
-	shape-rendering: crispEdges;
-}
- 
 
+.cLegend{
+	font: 14px Futura;
+}
+
+.tutorial{
+	font: 18px Futura
+}
+.tutorial2 line{
+	opacity: 0.2;
+	stroke: white;
+	stroke-width: 3px;
+}

@@ -1,38 +1,16 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Soccer</title>
-<style>
-
-@import url(tournament.css);
- 
-#circle circle {
-fill: none;
-pointer-events: all;
-}
- 
-.group path {
-fill-opacity: .8;
-}
- 
-path.chord {
-stroke: #000;
-stroke-width: .25px;
-}
- 
-#circle:hover path.fade {
-display: none;
-}
- 
-</style>
- 
-<header>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2018 FIFA WORLD CUP</title>
+    <style>
+        @import url(tournament.css);
+    </style>
     <script src="../lib/noUiSlider/nouislider.js"></script>
     <link  href="../lib/noUiSlider/nouislider.css" rel="stylesheet">
     <script src="../lib/pitch.js"></script>
     <link rel="stylesheet" href="../lib/pitch.css" />
 	<link rel="stylesheet" href="../soccerfield-template-vertical/soccerfield.css" />
-
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script>
         var d3v3 = d3;
@@ -42,16 +20,21 @@ display: none;
     <script>
         var d3v5 = d3;
     </script>
-</header>
+</head>
 
 <body>
-	<h1>2018 FIFA World Cup Tournament</h1>
-	 <div id="main">
-	 </div>
+    <header>
+	   <h1>2018 FIFA World Cup Data Visulization</h1>
+    </header>
 
-    <h2>Pitch</h2>
-    <div id="pitch"></div>
-    <div id="pitch-slider" style="width: 600px;"></div>
+	 <div id="main"></div>
+
+
+    <div id="pitch_div">
+        <h2>Pitch</h2>
+        <div id="pitch"></div>
+        <div id="pitch-slider" style="width: 600px;"></div>
+    </div>
 
     <script>
      let pitch = new Pitch();
@@ -63,11 +46,9 @@ display: none;
          .time_slider("#pitch-slider")
          .draw();
     </script>
-
-
-    <script src="tournament.js"></script>
 </body>
+<script src="tournament.js"></script>
 
- 
-<footer>
+<footer>   
 </footer>
+</html>
