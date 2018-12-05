@@ -1,4 +1,9 @@
-
+#pitch_div{
+    width: 1600px;
+    background-color: #072e36;
+    position: relative;
+    left: 0;
+}
 text.player_name {
     pointer-events: none;
     dominant-baseline: middle;
