@@ -52,3 +52,19 @@ print(a, n = 100)
 
 
 
+
+
+match <- li.matches[[31]]
+table(match$player.name)
+
+
+
+### Examine shot and goals
+
+match <- li.matches[[59]]
+table(match$type.name)
+
+match[match$type.name == "Shot", ] %>%
+    select(shot.outcome.name, starts_with("shot")) %>%
+    print(n = Inf)
+
