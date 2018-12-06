@@ -107,12 +107,14 @@
     <div id="pitch7"></div>
     <select id="pitch7-match-selector"></select>
     <div id="pitch7-timevis"></div>
+    <div id="pitch7-team-selector"></div>
     <script>
      let pitch7 = new Pitch();
      pitch7
          .drawtype("players")
          .selection("#pitch7")
          .match_selector("#pitch7-match-selector")
+         .team_selector("#pitch7-team-selector")
          .timevis("#pitch7-timevis")
          .draw();
     </script>
