@@ -51,7 +51,10 @@ d3v3.csv("teams.csv", function(countries) {
                         .attr("d", arc)
                         .style("fill", function(d){
                         	return colors[countries[d.index].stage];
-                        });
+                        })
+                        .on('mouseover', function(){
+                            d3.select(this).style("cursor", "pointer"); 
+                        })
          
         var groupCode = ["A", "B", "C", "D", "E", "F", "G", "H"];
         var seperate = group.append("text")
@@ -105,7 +108,6 @@ d3v3.csv("teams.csv", function(countries) {
                     .style('stroke-width', 0)
                     .attr("d", path)
                     .style("opacity", 0.6)
-                    //*****add onclick value*****
                     .on('mouseover', function() {
                         d3.select(this)
                         .style("opacity", 1);
@@ -178,7 +180,7 @@ d3v3.csv("teams.csv", function(countries) {
        .style('opacity', 0.6);
 
 var tutorial2 = svg.append('g')
-                   .attr('class', 'tutorial2')
+                   .attr('id', 'tutorial2')
 
     tutorial2.append('rect')
              .attr('x', 380)
@@ -187,6 +189,15 @@ var tutorial2 = svg.append('g')
              .attr('height', 300)
              .style('fill', 'white')
              .style('opacity', 0.3);
+
+    tutorial2.append('rect')
+             .attr('x', 400)
+             .attr('y', -75)
+             .attr('width', 80)
+             .attr('height', 40)
+             .style('fill', '#1f6e66')
+
+    
     tutorial2.append('line')
         .attr('x1', 400)
         .attr('y1', -280)
@@ -195,38 +206,49 @@ var tutorial2 = svg.append('g')
         .style("stroke-dasharray", ("3, 3"));
 
     tutorial2.append('line')
-        .attr('class', "tutorial")
         .attr('x1', 400)
         .attr('y1', -200)
-        .attr('x2', 110)
-        .attr('y2', -150)
+        .attr('x2', 80)
+        .attr('y2', -120)
         .style("stroke-dasharray", ("3, 3"))
 
     tutorial2.append('line')
-        .attr('class', "tutorial")
         .attr('x1', 400)
         .attr('y1', -120)
-        .attr('x2', 110)
-        .attr('y2', -150)
+        .attr('x2', 80)
+        .attr('y2', -120)
         .style("stroke-dasharray", ("3, 3"))
 
     tutorial2.append('text')
-       .attr('class', "tutorial")
+       .attr('class', "tutorial2")
        .text('Hover on an arc to see a team score')
        .style('fill', 'white')
        .call(d3.util.wrap(350, 400, -300));
 
     tutorial2.append('text')
-       .attr('class', "tutorial")
+       .attr('class', "tutorial2")
        .text('Hover on an edge to see the match score')
        .style('fill', 'white')
        .call(d3.util.wrap(350, 400, -220));
 
     tutorial2.append('text')
-       .attr('class', "tutorial")
+       .attr('class', "tutorial2")
        .text('Click on an edge to recap the match')
        .style('fill', 'white')
        .call(d3.util.wrap(350, 400, -140));
+
+    tutorial2.append('text')
+       .attr('class', "tutorial2")
+       .text('Got it')
+       .style('fill', 'white')
+       .call(d3.util.wrap(350, 410, -70))
+       .on('mouseover', function(){
+            d3.select(this).style("cursor", "pointer"); 
+       })
+       .on('click', function(){
+            d3.selectAll('#tutorial2').style('visibility', 'hidden');
+            d3.selectAll('.tutorial2').style('visibility', 'hidden');
+       });
 
 
 function tournament_click(teamA, teamB) {

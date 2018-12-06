@@ -1,17 +1,3 @@
-*{
-	margin: 0;
-	padding: 0;
-}
-html {
-min-width: 1040px;
-}
- 
-body {
-	color: white;
-	font-family: Atrament;
-	position: relative;
-	width: 1600px;
-}
 
 header{
 	background-color: #163329;
@@ -58,6 +44,9 @@ path.chord {
      
 #circle:hover path.fade {
     display: none;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0.2;
  }
 .titles text{
 	fill: white;
@@ -67,17 +56,11 @@ path.chord {
 	font: 14px Futura;
 }
 
-.tutorial{
+.tutorial, .tutorial2{
 	font: 18px Futura
 }
-.tutorial2 line{
+#tutorial2 line{
 	opacity: 0.2;
 	stroke: white;
 	stroke-width: 3px;
-}
-#pitch_div{
-    width: 1600px;
-    background-color: #072e36;
-    position: relative;
-    left: 0;
 }

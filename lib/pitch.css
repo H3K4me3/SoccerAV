@@ -1,4 +1,30 @@
 
+.innerField{
+    background: linear-gradient(
+      to bottom,
+      #1f6e66,
+      #1f6e66 50%,
+      #137d5a 50%,
+      #137d5a
+    );
+    background-size: 100% 95px;
+}
+
+.innerField line{
+      stroke: white;
+      stroke-width: 2px;
+}
+
+.dots {
+      fill: white;
+      fill-opacity: 1;
+}
+
+.innerSketch {
+      fill-opacity: 0;
+      stroke: white;
+      stroke-width: 2px;
+}
 text.player_name {
     pointer-events: none;
     dominant-baseline: middle;

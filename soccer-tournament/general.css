@@ -1,0 +1,38 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html {
+min-width: 1040px;
+}
+ 
+body {
+	color: white;
+	font-family: Atrament;
+	position: relative;
+	width: 1600px;
+}
+
+#pitch_div{
+    width: 1600px;
+    height: 800px;
+    background-color: #185751;
+    position: relative;
+    left: 0;
+}
+
+#pitch{
+	position: relative;
+	left: 50px;
+	top: 70px;
+}
+
+#timevis{
+	position: relative;
+	left: 50px;
+	top: 70px;
+}
+
+#pitch, #timevis{
+	float: left;
+}
