@@ -23,6 +23,9 @@ var svg= main.append("svg")
             .append("g")
             .attr("id", "circle")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    svg.append("circle")
+        .attr("r", outerRadius);
  
      
 d3v3.csv("teams.csv", function(countries) {

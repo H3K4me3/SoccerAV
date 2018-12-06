@@ -44,9 +44,7 @@ path.chord {
      
 #circle:hover path.fade {
     display: none;
-    visibility: hidden;
-    pointer-events: none;
-    opacity: 0.2;
+
  }
 .titles text{
 	fill: white;
