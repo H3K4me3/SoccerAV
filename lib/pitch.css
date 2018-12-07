@@ -53,6 +53,7 @@
     border-radius: 100%;
     background: #fff;
 }
+
 [type="radio"]:checked + label:after,
 [type="radio"]:not(:checked) + label:after {
     content: '';

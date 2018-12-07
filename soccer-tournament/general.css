@@ -29,13 +29,13 @@ body {
 
 #timevis{
 	position: relative;
-	left: 120px;
+	left: 150px;
 	top: 50px;
 }
 
 #pitch-team-selector{
     position: relative;
-    left: 100px;
+    left: 400px;
     top: 40px;
 }
 #pitch, #timevis{
@@ -89,10 +89,13 @@ li .importantInfo{
 
 #tutorial3{
 	width: 1600px;
-	height: 900px;
+	height: 800px;
 	position: relative;
 	top: -1100px;
 
+}
+.playerInfoWrapper{
+	height: 300px;
 }
 #tutorial3 text{
 	font-size: 13px;
