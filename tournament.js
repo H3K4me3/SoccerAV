@@ -97,7 +97,7 @@ d3v3.csv("teams.csv", function(countries) {
                     .data(layout.chords)
                     .enter()
                     .append("a")
-                    .attr("xlink:href", "#pitch")
+                    .attr("xlink:href", "#pitch_div")
                     .append("path")
                     .attr("class", "chord")
                     .style("fill", function(d){
