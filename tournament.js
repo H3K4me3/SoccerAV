@@ -255,7 +255,7 @@ var tutorial2 = svg.append('g')
 
 
 function tournament_click(teamA, teamB) {
-    let matches = d3v5.json("../rawdata/data/matches/43.json").then(function(matches) {
+    let matches = d3v5.json("rawdata/data/matches/43.json").then(function(matches) {
         let match = matches.find(m =>
             (m.away_team.away_team_name === teamB && m.home_team.home_team_name === teamA) ||
             (m.away_team.away_team_name === teamA && m.home_team.home_team_name === teamB));
