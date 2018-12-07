@@ -25,11 +25,7 @@
       stroke: white;
       stroke-width: 2px;
 }
-#pitch-team-selector{
-    position: relative;
-    left: 50px;
-    top: 50px;
-}
+
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;
