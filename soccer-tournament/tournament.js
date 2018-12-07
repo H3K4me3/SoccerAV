@@ -162,7 +162,7 @@ d3v3.csv("teams.csv", function(countries) {
                 .call(d3.util.wrap(320, 420, 320));
 
     chordLegends.append('text')
-                .text('*Arc colors represents how far the team went.')
+                .text('*Arc colors represent how far the team went.')
                 .attr('class', 'cLegend')
                 .call(d3.util.wrap(320, 400, 110));
 
@@ -224,7 +224,7 @@ var tutorial2 = svg.append('g')
 
     tutorial2.append('text')
        .attr('class', "tutorial2")
-       .text('Hover on an arc to see a team score')
+       .text('Hover on an arc to see scores of a team')
        .style('fill', 'white')
        .call(d3.util.wrap(350, 400, -300));
 
