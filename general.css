@@ -45,7 +45,7 @@ body {
 	clear: both;
 	position: relative;
 	left: 800px;
-	top: -340px;
+	top: -440px;
 	width: 280px;
 	height: 300px;
 }
@@ -58,7 +58,7 @@ body {
 }
 #nameCard{
 	position: relative;
-    top: -300px;
+    top: -290px;
     text-align: center;
 }
 #playerInfo ul{
@@ -91,7 +91,7 @@ li .importantInfo{
 	width: 1600px;
 	height: 800px;
 	position: relative;
-	top: -1100px;
+	top: -1250px;
 
 }
 .playerInfoWrapper{
