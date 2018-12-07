@@ -54,13 +54,13 @@ body {
 	overflow: hidden;
   	text-overflow: ellipsis;
   	resize: horizontal;
+  	font-weight: 200;
   
 }
 #nameCard{
 	position: relative;
     top: -290px;
     text-align: center;
-    width: 280px;
 }
 #playerInfo ul{
 	list-style-type: none;
@@ -76,7 +76,7 @@ li .importantInfo{
 	font-weight: 200;
 }
 
-div #pLegends{
+#pLegends{
 	clear: both;
 	position: relative;
 	left: 640px;
@@ -96,7 +96,6 @@ div #pLegends{
 
 }
 .playerInfoWrapper{
-	width: 280px;
 	height: 300px;
 }
 #tutorial3 text{
