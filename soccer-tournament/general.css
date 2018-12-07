@@ -24,19 +24,19 @@ body {
 #pitch{
 	position: relative;
 	left: 100px;
-	top: 70px;
+	top: 60px;
 }
 
 #timevis{
 	position: relative;
 	left: 120px;
-	top: 70px;
+	top: 50px;
 }
 
 #pitch-team-selector{
     position: relative;
     left: 100px;
-    top: 50px;
+    top: 40px;
 }
 #pitch, #timevis{
 	float: left;
@@ -44,13 +44,13 @@ body {
 #playerInfo{
 	clear: both;
 	position: relative;
-	left: 650px;
-	top: -230px;
+	left: 800px;
+	top: -340px;
 	width: 280px;
 	height: 300px;
 }
-#playerInfo h2{
-	font-size: 3em;
+.playerInfoWrapper h2{
+	font-size: 2.5em;
 	overflow: hidden;
   	text-overflow: ellipsis;
   	resize: horizontal;
@@ -58,22 +58,44 @@ body {
 }
 #nameCard{
 	position: relative;
-    top: -290px;
+    top: -300px;
     text-align: center;
 }
 #playerInfo ul{
 	list-style-type: none;
 	text-align: left;
 	position: relative;
-	left: 60px
+	top: 35px;
+	left: 30px
 }
 #playerInfo li{
-	font-size: 30px;
+	font-size: 25px;
 }
 li .importantInfo{
 	font-weight: 200;
 }
-svg #mask{
+
+#pLegends{
+	clear: both;
+	position: relative;
+	left: 640px;
+	top: -20px;
+	width: 200px;
+}
+#mask rect{
 	fill: none;
 	pointer-events: all;
+}
+
+#tutorial3{
+	width: 1600px;
+	height: 900px;
+	position: relative;
+	top: -1100px;
+
+}
+#tutorial3 text{
+	font-size: 13px;
+	font-family: Futura;
+
 }

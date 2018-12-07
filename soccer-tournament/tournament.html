@@ -29,12 +29,16 @@
 
 
     <div id="pitch_div">
-        
         <div id="pitch-team-selector"></div>
         <div id="pitch"></div>
         <div id="timevis"></div>
         <div id="pLegends">
-            <svg>
+            <svg width="200" height="100">
+                <line x1="0" y1="10" x2="50" y2="10" style="stroke:white;stroke-width:2" />
+                <text x='55' y='15'> Successful Pass</text>
+                <line x1="0" y1="60" x2="50" y2="60" style="stroke:white;stroke-width:2; stroke-dasharray:4" />
+                <text x='55' y='65'> Unsuccessful Pass</text>
+            </svg>
         </div>
         <div id='playerInfo'>
             <!--
@@ -53,10 +57,25 @@
                  </ul>
                  </div>
             -->
+
+        </div>
+
+        <div id='tutorial3'>
+            <svg id='mask' width="1600" height="900">
+                <rect width="1600" height="900" x='0' y='0'/>
+                <line x1="1000" y1="280" x2="1100" y2="540" style="stroke:white;stroke-width:2;stroke-dasharray:4;opacity: 0.5" />
+                <line x1="550" y1="540" x2="1100" y2="600" style="stroke:white;stroke-width:2;stroke-dasharray:4;opacity: 0.5" />
+                <rect width="470" height="220" x='1080' y='465' style="fill:white;fill-opacity: 0.3" />
+                <text x='1100' y='540' textLength="430" lengthAdjust="spacing">Select a period on the slider to see players’ average positions and passes in the field vis.</text>
+                <text x='1100' y='600' textLength="430" lengthAdjust="spacing">Select a edge to see a player’s interaction with others and his statistical information.</text>
+                <rect onclick='changerect()' width="60" height="35" x='1100' y='640'style="fill:black;fill-opacity: 0.3" />
+                <text x='1115' y='660' style='pointer-events: none;'>Got it</text>
+                
+            </svg>
         </div>
     </div>
 
-    <script>
+    <script> 
      let pitch = new Pitch();
      pitch
          .drawtype("players")
@@ -67,6 +86,13 @@
          .timevis("#timevis")
          .player_info_div("#playerInfo")
          .draw();
+
+     function changerect() {
+        console.log("destroy");
+        var hideObj = document.getElementById('tutorial3');
+        hideObj.parentNode.removeChild(hideObj);
+    }
+
     </script>
 </body>
 <script src="tournament.js"></script>
