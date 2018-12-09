@@ -34,11 +34,13 @@
         <div id="pitch"></div>
         <div id="timevis"></div>
         <div id="pLegends">
-            <svg width="200" height="120">
+            <svg width="300" height="140">
                 <line x1="0" y1="10" x2="50" y2="10" style="stroke:white;stroke-width:2" />
                 <text x='55' y='15'> Successful Pass</text>
                 <line x1="0" y1="60" x2="50" y2="60" style="stroke:white;stroke-width:2; stroke-dasharray:4" />
                 <text x='55' y='65'> Unsuccessful Pass</text>
+                <text x='0' y='100'>*The color shade of a node represents the number of passes.</text>
+                <text x='0' y='135'>*The stroke width of a node edge represents the number of shots.</text>
             </svg>
         </div>
         <div id='playerInfo'>
@@ -61,20 +63,31 @@
 
         </div>
 
+
         <div id='tutorial3'>
             <svg id='mask' width="1600" height="800">
                 <rect width="1600" height="800" x='0' y='0'/>
                 <line x1="1000" y1="280" x2="1100" y2="540" style="stroke:white;stroke-width:2;stroke-dasharray:4;opacity: 0.5" />
                 <line x1="550" y1="540" x2="1100" y2="600" style="stroke:white;stroke-width:2;stroke-dasharray:4;opacity: 0.5" />
-                <rect width="470" height="220" x='1080' y='465' style="fill:white;fill-opacity: 0.3" />
+                <rect width="470" height="180" x='1080' y='485' style="fill:white;fill-opacity: 0.3" />
                 <text x='1100' y='540' textLength="430" lengthAdjust="spacing">Select a period on the slider to see players’ average positions and passes in the field vis.</text>
                 <text x='1100' y='600' textLength="430" lengthAdjust="spacing">Select a edge to see a player’s interaction with others and his statistical information.</text>
-                <rect onclick='changerect()' width="60" height="35" x='1100' y='640'style="fill:black;fill-opacity: 0.3" />
-                <text x='1115' y='660' style='pointer-events: none;'>Got it</text>
+                <rect onclick='changerect()' width="60" height="35" x='1100' y='620'style="fill:black;fill-opacity: 0.3" />
+                <text x='1110' y='640' style='cursor: pointer;'>Got it</text>
                 
             </svg>
         </div>
     </div>
+
+     <svg id='tLegends' width='250' height='300'>
+            <text x='100' y='15' style='font-size: 20'>Pass Frequency</text>
+            <polygon points="10,80 20,62 30,80" style="fill:yellow"/>
+            <text x='40' y='80'> Goals</text>
+            <polygon points="10,110 20,92 30,110" style="fill:grey"/>
+            <text x='40' y='110'> Shots</text>
+            <text x='0' y='220' style='font-size: 13'> Possession Time</text>
+    </svg>
+   
 
     <script> 
      let pitch = new Pitch();
@@ -95,6 +108,7 @@
     }
 
     </script>
+    <a href="#main" id='back'>Back to Top</a>
 </body>
 <script src="tournament.js"></script>
 

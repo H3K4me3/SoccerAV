@@ -11,6 +11,7 @@ body {
 	font-family: atrament-web, sans-serif;
 	position: relative;
 	width: 1600px;
+	height: 1800px;
 }
 
 #pitch_div{
@@ -29,8 +30,9 @@ body {
 
 #timevis{
 	position: relative;
-	left: 150px;
+	left: 180px;
 	top: 50px;
+	z-index: 2;
 }
 
 #pitch-team-selector{
@@ -80,8 +82,8 @@ div #pLegends{
 	clear: both;
 	position: relative;
 	left: 640px;
-	top: -20px;
-	width: 200px;
+	top: -80px;
+	width: 300px;
 }
 #mask rect{
 	fill: none;
@@ -104,3 +106,25 @@ div #pLegends{
 	font-family: Futura;
 
 }
+#tLegends{
+	position: relative;
+	left: 630px;
+	top: -830px;
+	pointer-events: all;
+	z-index: 0;
+	font-family: Futura;
+	font-size: 14px;
+}
+
+#back{
+	position: relative;
+	top: -350px;
+	left: 1200px;
+	color: white;
+	text-decoration: none;
+	background-color: #537766;
+	padding: 3px 6px;
+	border-radius: 3px;
+}
+
+
