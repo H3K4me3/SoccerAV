@@ -127,7 +127,7 @@ d3v3.csv("teams.csv", function(countries) {
 
 //add chord legends
     var cLegendNames =  {group: 'Group', round16: 'Round of 16',
-            quarterFinal: 'Quater Final', semiFinal: 'Semi Final', final: 'Final'};
+            quarterFinal: 'Quarter Final', semiFinal: 'Semi Final', final: 'Final'};
 
     var chordLegends = svg.append('svg')
                           .attr('class', 'chordLegends')
