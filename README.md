@@ -3,6 +3,8 @@
 
 The visualization is available at https://h3k4me3.github.io/SoccerAV/
 
+Also checkout our video tutorial at https://raw.githubusercontent.com/H3K4me3/SoccerAV/video/SoccerVis.webm
+
 ## Data
 
 The data inside `rawdata` directory was collected from [StatsBomb](https://github.com/statsbomb/open-data).
