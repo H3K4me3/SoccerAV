@@ -46,8 +46,8 @@ body {
 #playerInfo{
 	clear: both;
 	position: relative;
-	left: 800px;
-	top: -440px;
+	left: 1000px;
+	top: -400px;
 	width: 280px;
 	height: 300px;
 }
@@ -77,13 +77,12 @@ body {
 li .importantInfo{
 	font-weight: 200;
 }
-
-div #pLegends{
+#pLegends{
 	clear: both;
 	position: relative;
 	left: 640px;
 	top: -80px;
-	width: 300px;
+	width: 200px;
 }
 #mask rect{
 	fill: none;
