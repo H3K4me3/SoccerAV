@@ -24,3 +24,7 @@ cd SoccerAV
 python3 -m http.server 6942
 ```
 
+## Links
+
+- [Visual Analysis of Pressure in Football](http://geoanalytics.net/and/papers/dmkd17.pdf)
+- [James Curley](http://jalapic.github.io/index)
